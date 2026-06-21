@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block title %}Portfolio | Cinematic Studio{% endblock %}
+{% block description %}Explore our portfolio of drone cinematography, real estate films, hotel and restaurant commercials, and AI-enhanced visuals.{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+    <div class="container fade-in">
+        <p class="eyebrow">Our Work</p>
+        <h1 class="page-title">Portfolio<span class="logo-accent">.</span></h1>
+        <p class="page-subtitle">A curated selection of cinematic projects across hospitality, real estate, architecture and branding.</p>
+    </div>
+</section>
+
+<!-- ===================================================
+     FILTER BUTTONS (optional, controlled by main.js)
+     Add data-filter attributes matching .portfolio-item categories
+=================================================== -->
+<section class="portfolio-filter-bar">
+    <div class="container">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="hospitality">Hospitality</button>
+        <button class="filter-btn" data-filter="real-estate">Real Estate</button>
+        <button class="filter-btn" data-filter="architecture">Architecture</button>
+        <button class="filter-btn" data-filter="brand">Brand</button>
+    </div>
+</section>
+
+<!-- ===================================================
+     FULL PORTFOLIO GALLERY
+     To add a new project:
+       1. Drop an image into static/images/
+       2. Duplicate a .portfolio-item block below
+       3. Update image src, alt text, title, category, data-category
+=================================================== -->
+<section class="portfolio-full">
+    <div class="portfolio-grid">
+
+        <a href="#" class="portfolio-item fade-in" data-category="hospitality">
+            <img src="{{ url_for('static', filename='images/portfolio-1.jpg') }}" alt="Luxury hotel video">
+            <div class="portfolio-info">
+                <h4>Luxury Hotel Video</h4>
+                <span>Hospitality</span>
+            </div>
+        </a>
+
+        <a href="#" class="portfolio-item fade-in" data-category="hospitality">
+            <img src="{{ url_for('static', filename='images/portfolio-2.jpg') }}" alt="Restaurant atmosphere">
+            <div class="portfolio-info">
+                <h4>Restaurant Atmosphere</h4>
+                <span>Hospitality</span>
+            </div>
+        </a>
+
+        <a href="#" class="portfolio-item fade-in" data-category="real-estate">
+            <img src="{{ url_for('static', filename='images/portfolio-3.jpg') }}" alt="Real estate drone shots">
+            <div class="portfolio-info">
+                <h4>Real Estate Drone Shots</h4>
+                <span>Real Estate</span>
+            </div>
+        </a>
+
+        <a href="#" class="portfolio-item fade-in" data-category="architecture">
+            <img src="{{ url_for('static', filename='images/portfolio-4.jpg') }}" alt="Architecture films">
+            <div class="portfolio-info">
+                <h4>Architecture Films</h4>
+                <span>Architecture</span>
+            </div>
+        </a>
+
+        <a href="#" class="portfolio-item fade-in" data-category="brand">
+            <img src="{{ url_for('static', filename='images/portfolio-5.jpg') }}" alt="Brand commercial">
+            <div class="portfolio-info">
+                <h4>Brand Commercial</h4>
+                <span>Brand</span>
+            </div>
+        </a>
+
+        <a href="#" class="portfolio-item fade-in" data-category="real-estate">
+            <img src="{{ url_for('static', filename='images/portfolio-6.jpg') }}" alt="Modern villa drone tour">
+            <div class="portfolio-info">
+                <h4>Modern Villa Drone Tour</h4>
+                <span>Real Estate</span>
+            </div>
+        </a>
+
+        <a href="#" class="portfolio-item fade-in" data-category="architecture">
+            <img src="{{ url_for('static', filename='images/portfolio-7.jpg') }}" alt="City skyline architecture film">
+            <div class="portfolio-info">
+                <h4>City Skyline Film</h4>
+                <span>Architecture</span>
+            </div>
+        </a>
+
+        <a href="#" class="portfolio-item fade-in" data-category="brand">
+            <img src="{{ url_for('static', filename='images/portfolio-8.jpg') }}" alt="AI enhanced brand visual">
+            <div class="portfolio-info">
+                <h4>AI-Enhanced Brand Visual</h4>
+                <span>Brand</span>
+            </div>
+        </a>
+
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container cta-inner fade-in">
+        <h2>Have A Project <em>In Mind?</em></h2>
+        <p>We'd love to hear about it and help bring it to life.</p>
+        <a href="{{ url_for('contact') }}" class="btn btn-primary">Contact Us</a>
+    </div>
+</section>
+
+{% endblock %}
